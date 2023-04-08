@@ -1,0 +1,30 @@
+<form [formGroup]="loginForm2" (ngSubmit)="submitLogin2()" class="wrapper">
+   <div class="login__box">
+      <div class="login__box-title">
+         <p class="login-title"> Create account</p>
+      </div>
+      <div class="box__sing-up">
+         <div class="login__form">
+            <input formControlName="name" type="text" placeholder="Enter Name...">
+            <p class="form-title"> Name</p>
+            <p *ngIf="this.loginForm2.get('name')?.invalid && this.loginForm2.get('name')?.touched" class="form-description">Name is required</p>
+            <input formControlName="surname" type="text" placeholder="Enter Surname...">
+            <p class="form-title"> Surname</p>
+            <p *ngIf="this.loginForm2.get('surname')?.invalid && this.loginForm2.get('surname')?.touched" class="form-description">Surname is required</p>
+            <input formControlName="email" type="email" placeholder="Enter email...">
+            <p class="form-title"> Email</p>
+            <p *ngIf="this.loginForm2.get('email')?.invalid && this.loginForm2.get('email')?.touched" class="form-description">Email is required</p>
+         </div>
+         <div class="login__form">
+            <input formControlName="password" type="password" placeholder="********">
+            <p class="form-title">Create password</p>
+            <p *ngIf="this.loginForm2.get('password')?.invalid && this.loginForm2.get('password')?.touched" class="form-description">Password is required(min.length = 8)</p>
+            <input formControlName="password2" type="password" placeholder="********">
+            <p class="form-title">Repeat password</p>
+            <p *ngIf="this.loginForm2.value.password != this.loginForm2.value.password2" class="form-description">Password mismatch</p>
+         </div>
+      </div>
+      <button>Sing up</button>
+      <p class="sing-up"> Do you have an account? <a [routerLink]="['/login']" routerLinkActive="router-link-active">Sing in</a></p>
+   </div>
+</form>

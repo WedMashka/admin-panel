@@ -1,0 +1,19 @@
+button{
+   margin: 0px 20px;
+   border-radius: 10px;
+   background-color: rgba(127, 167, 202, 0.3);
+   min-width: 100px;
+   min-height: 50px;
+   color: white;
+   font-size: 24px;
+   font-weight: 500;
+   box-shadow: 0px 0px 5px 0px rgba(255, 254, 254, 0.8);
+}
+
+button:hover{
+   box-shadow: 0px 0px 5px 0px rgb(0, 71, 109);
+}
+
+button:active {
+   box-shadow: 0px 0px 20px 0px rgb(255, 255, 255);
+}

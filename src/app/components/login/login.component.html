@@ -1,0 +1,21 @@
+<form class="wrapper" [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+   <div class="login__box">
+      <div class="login__box-title">
+         <p class="login-title"> login</p>
+         <p class="login-description">Please enter yuor login and password!</p>
+      </div>
+      <div class="login__form">
+         <input formControlName="email" type="email" placeholder="Enter email...">
+         <p class="form-title"> Email</p>
+         <p *ngIf="this.loginForm.get('email')?.invalid && this.loginForm.get('email')?.touched" class="form-description">Email is required</p>
+      </div>
+      <div class="login__form">
+         <input formControlName="password" type="password" placeholder="********">
+         <p class="form-title">Password</p>
+         <p *ngIf="this.loginForm.get('password')?.invalid && this.loginForm.get('password')?.touched" class="form-description">Password is required(min.length = 8)</p>
+      </div>
+      <button>Login</button>
+      <p class="sing-up"> Don't have an account? <a [routerLink]="['/sing-up']" routerLinkActive="router-link-active" > Sing up</a></p>
+   </div>
+</form>
+
